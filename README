@@ -1,0 +1,54 @@
+Nick Trierweiler Final Project submission!
+
+Time Taken: ~40 hours  
+	Short essay about my struggles: 
+	I tried to implement a shader from class which I wasted about 18 hours on. I was easily able to get the shader modified to add textures and I even had a shader that looked like a spotlight(with drastically modified parameters) but I was unable to get it to do two sided lighting(BUMMER!) and I also had trouble making the cutoff angle correctly match. Instead of sketchily using that shader I just reverted to the regular spotlight(wow that was easy, haha). I subdivided all my objects and made them look good with the built in GL shader functions. 
+	
+	I spent about 5 hours trying to implement hitboxes myself before realizing this was harder than I thought so I used AABB hitboxes to make this happen in the x-z plane.	
+	
+	My girlfriend was upset with me this week because this is basically all I did all day every day. 
+
+	This was a great course I really enjoyed it!
+
+run:
+	make; ./gameSDL
+
+Key Bindings:
+T	Textures on/off
+L	Lighting on/off
+Y/y	Change spotlight angle
+</>	Rotate light around scene clock/counterclockwise
+C   	Faceculling 
+M   	viewing modes(orthogonal/perspective)
+F   	toggle first person mode(can be used in orthogonal and perspective modes)
++/- 	change view in/out in perspective mode
+x   	toggle axis viewing
+w,a,s,d moving in first person mode
+arrow keys for rotation around scene when not in first person
+
+Project review additions: (old)
+	-Moved to SDL
+	-Sound, breathing in background
+	-Skybox allowed for sky and replaced my old landscape function.
+	-Skybox floor has repeating textures
+	-Added new textures for trees and moved them(function params need fixing)
+	
+Final project additions: (new since review)
+	-Spotlight to look around
+	-Subdivided all quads in the scene to make the lighting look good
+	-Fixed tree functionality 
+	-Real leaves(new object using 2 sided lighting)
+	-Hitboxes on all of my houses which disallow movement of player
+	-Trees have been placed in artificial random locations(without using rand since this could cause it to render in unwanted places sometimes)
+	-Map(n) shows player location and map layout in real time(disallows movement when open)
+	-Skybox now moves around the player and also distorts through translations by a small amount which makes the map artificially bigger than it really is(I stumbled upon this while making it move and was happy with the result)
+	-Skybox also has a bordering hitbox which I did by just creating a hitbox and inverting the collision variable so they can move when they are inside
+	-Player movement is updated to allow multiple keypresses(U+L,U+R,D+L,D+R) as long as they are not opposing
+	-All objects(as always) can still be faceculled in my scene even after breaking them into pieces for the spotlight
+	
+
+Magic: Walk around using w a s d, press N to see the map, use spotlight on house and trees (Lshift y/y to aim spotlight up/down, Lshift P/p to change cutoff angle), walk up against a house, walk to edge of the skybox. 
+
+
+DONT DO THIS: If you feel your CPU is strong change mex_levels to 8 and watch it die. :) xkill in terminal to end the madness. 
+
